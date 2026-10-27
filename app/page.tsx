@@ -5,12 +5,6 @@ import { useEffect, useState } from "react";
 
 const navLinks = ["Projetos", "Sobre mim", "Serviços", "Contato"];
 const languageLinks = ["Português", "Inglês", "Espanhol"];
-const contactLinks = [
-  { label: "Email", value: "contato@nicolasquerci.com", href: "mailto:contato@nicolasquerci.com" },
-  { label: "LinkedIn", value: "linkedin.com/in/nicolasquerci", href: "https://www.linkedin.com/in/nicolasquerci" },
-  { label: "Behance", value: "behance.net/nicolasquerci", href: "https://www.behance.net/nicolasquerci" },
-  { label: "GitHub", value: "github.com/nicolasquerci", href: "https://github.com/nicolasquerci" },
-];
 const somaProjectImages = [
   { src: "/soma-project.png", alt: "Tela do aplicativo Soma em um iPhone" },
   { src: "/soma-carousel-1.png", alt: "Tela de conversa do assistente Soma no iPhone" },
@@ -530,49 +524,63 @@ export default function Home() {
         </div>
       </section>
       <section id="contato" className="contact-section" aria-labelledby="contact-title">
-        <div className="contact-grid">
-          <div className="contact-eyebrow">Contato</div>
-
-          <div className="contact-copy">
-            <h2 id="contact-title" className="contact-title">
-              <span>Vamos transformar uma ideia</span>
-              <span>
-                em uma <em>experiência simples?</em>
-              </span>
-            </h2>
-            <p className="contact-description">
-              Se você tem um produto para estruturar, uma interface para evoluir ou uma jornada que precisa fazer
-              mais sentido para pessoas e negócios, vamos conversar.
-            </p>
-            <a className="contact-primary-button" href="mailto:contato@nicolasquerci.com">
-              <span>Enviar email</span>
+        <div className="contact-content">
+          <h2 id="contact-title" className="contact-title">
+            <span>Vamos transformar</span>
+            <span>uma ideia em uma</span>
+            <em>experiência?</em>
+          </h2>
+          <p className="contact-description">
+            Se você tem um produto para estruturar, uma interface para evoluir ou uma jornada que precisa fazer mais
+            sentido para pessoas e negócios, vamos conversar.
+          </p>
+          <div className="contact-actions" aria-label="Formas de contato">
+            <a className="contact-action contact-action-email" href="mailto:nicolaslquerci@outlook.com">
+              <img src="/contact-email.svg" alt="" width="24" height="24" />
+              <span>Envie um e-mail</span>
+            </a>
+            <a
+              className="contact-action contact-action-resume"
+              href="/Nicolas-Lins-Querci-Curriculo.pdf"
+              download="Nicolas-Lins-Querci-Curriculo.pdf"
+            >
+              <img src="/contact-download.svg" alt="" width="24" height="24" />
+              <span>Currículo</span>
+            </a>
+            <a
+              className="contact-action contact-action-icon"
+              href="https://wa.me/5511944487792"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Enviar mensagem pelo WhatsApp"
+            >
+              <img src="/contact-whatsapp.svg" alt="" width="24" height="24" />
+            </a>
+            <a
+              className="contact-action contact-action-icon"
+              href="https://www.linkedin.com/in/nicolas-querci-2b2972326/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir LinkedIn em nova guia"
+            >
+              <img src="/contact-linkedin.svg" alt="" width="24" height="24" />
+            </a>
+            <a
+              className="contact-action contact-action-icon"
+              href="https://github.com/nicolaslquerci-cell"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir GitHub em nova guia"
+            >
+              <img src="/contact-github.svg" alt="" width="24" height="24" />
             </a>
           </div>
-
-          <div className="contact-panel" aria-label="Canais de contato">
-            <div className="contact-panel-header">
-              <span>Disponível para</span>
-              <strong>Projetos, produtos digitais e colaborações.</strong>
-            </div>
-
-            <div className="contact-link-list">
-              {contactLinks.map((link) => (
-                <a
-                  className="contact-link"
-                  href={link.href}
-                  key={link.label}
-                  target={link.href.startsWith("http") ? "_blank" : undefined}
-                  rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                >
-                  <span>{link.label}</span>
-                  <strong>{link.value}</strong>
-                </a>
-              ))}
-            </div>
-          </div>
-
-          <div className="contact-footnote">
+        </div>
+        <div className="contact-footer">
+          <div className="contact-divider" />
+          <div className="contact-areas" aria-label="Áreas de atuação">
             <span>UX/UI Design</span>
+            <span>UX Research</span>
             <span>Product Design</span>
             <span>Design Systems</span>
             <span>Front-end</span>
